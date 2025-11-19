@@ -1,12 +1,20 @@
+<?php
 
-// Contoh konfigurasi di Express.js
+use Illuminate\Foundation\Application;
+use Illuminate\Http\Request;
 
-const express = require('express');
-const path = require('path');
-const app = express();
+define('LARAVEL_START', microtime(true));
 
-// Atur direktori 'public' sebagai tempat untuk file statis
-app.use(express.static(path.join(__dirname, 'public')));
+// Determine if the application is in maintenance mode...
+if (file_exists($maintenance = __DIR__.'/storage/framework/maintenance.php')) {
+    require $maintenance;
+}
 
-// Server akan otomatis melayani public/index.html saat request ke root "/"
-// ...
+// Register the Composer autoloader...
+require __DIR__.'/vendor/autoload.php';
+
+// Bootstrap Laravel and handle the request...
+/** @var Application $app */
+$app = require_once __DIR__.'/bootstrap/app.php';
+
+$app->handleRequest(Request::capture());
