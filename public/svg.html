@@ -1,0 +1,37 @@
+<svg id="shoenix-logo-svg" 
+     width="200" 
+     height="100" 
+     viewBox="0 0 400 200" 
+     fill="none" 
+     xmlns="http://www.w3.org/2000/svg" 
+     style="display: block; margin: auto;">
+    
+    <defs>
+        <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+            <feFlood flood-color="#00FFFF" flood-opacity="1" result="color" />
+            <feComposite in="color" in2="blur" operator="in" result="neon" />
+            <feMerge>
+                <feMergeNode in="neon" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+    </defs>
+
+    <path d="M 10 170 C 10 150, 20 100, 100 100 L 300 100 C 380 100, 390 120, 390 170 C 390 170, 390 180, 10 180 Z" 
+          stroke="#00FFFF" 
+          stroke-width="5" 
+          fill="none" 
+          filter="url(#neonGlow)" />
+    
+    <line x1="260" y1="110" x2="260" y2="135" stroke="#00FFFF" stroke-width="5" filter="url(#neonGlow)" />
+    <line x1="280" y1="110" x2="280" y2="135" stroke="#00FFFF" stroke-width="5" filter="url(#neonGlow)" />
+    <line x1="300" y1="110" x2="300" y2="135" stroke="#00FFFF" stroke-width="5" filter="url(#neonGlow)" />
+
+    <path d="M 10 170 L 20 145 C 25 130, 40 130, 50 145 L 60 170" 
+          stroke="#00FFFF" 
+          stroke-width="5" 
+          fill="none" 
+          filter="url(#neonGlow)" />
+          
+</svg>

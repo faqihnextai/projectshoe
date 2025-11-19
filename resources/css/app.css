@@ -1,0 +1,173 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+/* Di file CSS/Tailwind utama Anda (misalnya: style.css) */
+/* Pastikan ini di-build oleh Tailwind */
+.translate-y-minus-full {
+    transform: translateY(-100%);
+}
+
+/* ========== CSS EXISTING KAMU ========== */
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    color: rgb(0, 0, 0);
+    padding: 15px 0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+
+/* Pastikan file ini diproses oleh Tailwind */
+.header-hidden-up {
+    /* Ini akan menggeser header ke atas sejauh tinggi dirinya sendiri */
+    transform: translateY(-100%); 
+    /* Hilangkan bayangan saat tersembunyi */
+    box-shadow: none !important; 
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+main {
+    padding: 40px 0;
+    min-height: 70vh;
+}
+
+footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.hero-section {
+    padding: 60px 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(5px);
+}
+
+#hamburger {
+}
+#hamburger:hover {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.menu-open {
+    max-height: 500px !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.nav-item {
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+.nav-item:hover {
+    color: #ebd402;
+}
+
+#nav-mobile {
+    width: 100% !important;
+    margin: 0 !important;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    background-color: #1a1a1a;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+    max-height: 0;
+    overflow: hidden;
+    transition: background-color 0.5s ease-in-out, max-height 0.5s ease-in-out;
+}
+
+#nav-mobile ul {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#nav-mobile.menu-open {
+    max-height: 500px !important;
+    background: linear-gradient(to right, #c5c5c5, #c5c4c4);
+}
+
+@media (max-width: 767px) {
+    #nav-desktop {
+        display: none !important;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+}
+
+/* =============================================== */
+/* =============== NEON EFFECT ==================== */
+/* =============================================== */
+
+/* Neon Pink */
+.neon-pink {
+    color: #FF00FF !important;
+    text-shadow:
+        0 0 5px #FF00FF,
+        0 0 10px #FF00FF,
+        0 0 20px #FF00FF,
+        0 0 40px #FF0099,
+        0 0 80px #FF0099,
+        0 0 120px #FF0099;
+}
+
+/* Neon Blue */
+.neon-blue {
+    color: #00FFFF !important;
+    text-shadow:
+        0 0 5px #00FFFF,
+        0 0 10px #00FFFF,
+        0 0 20px #00FFFF,
+        0 0 40px #0099FF,
+        0 0 80px #0099FF,
+        0 0 120px #0099FF;
+}
+
+/* =============================================== */
+
+/* =============================================== */
+/* =============== HERO SECTION ==================== */
+/* =============================================== */

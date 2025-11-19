@@ -1,0 +1,255 @@
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+.header-container, .footer-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* =========================================
+   --- Styling Header Utama --- 
+   ========================================= */
+.main-header {
+    background-color: #ffffff; /* Dark Blue */
+    color: #ecf0f1;
+    padding: 1rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.logo {
+    text-decoration: none;
+    color: #3498db;
+    font-size: 1.8rem;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: #ecf0f1;
+}
+
+/* Navigasi Desktop */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px; 
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #ecf0f1;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #3498db;
+}
+
+/* Tombol Hamburger */
+.hamburger-menu {
+    display: none; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001; 
+}
+
+.bar {
+    display: block;
+    width: 28px;
+    height: 3px;
+    margin: 6px 0;
+    background-color: #ecf0f1;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animasi Hamburger */
+.hamburger-menu.active .bar:nth-child(2) { opacity: 0; }
+.hamburger-menu.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.hamburger-menu.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+
+
+
+/* =========================================
+   --- Styling Footer Utama --- 
+   ========================================= */
+.main-footer {
+    background-color: #212529; 
+    color: #adb5bd; 
+    padding: 40px 0 20px 0;
+    margin-top: 60px; 
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px; 
+    flex-wrap: wrap; 
+}
+
+.footer-col {
+    flex: 1; 
+    min-width: 220px; 
+}
+
+/* Judul Kolom Footer */
+.footer-col h4 {
+    color: #f8f9fa;
+    font-size: 1.15rem;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #3498db; 
+    padding-bottom: 8px;
+    font-weight: 700;
+    display: inline-block;
+}
+
+/* Logo Footer */
+.footer-logo {
+    text-decoration: none;
+    color: #3498db; 
+    font-size: 1.7rem;
+    font-weight: 800;
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* Navigasi Footer */
+.nav-col ul {
+    list-style: none;
+}
+
+.nav-col ul li {
+    margin-bottom: 12px;
+}
+
+.nav-col ul li a {
+    text-decoration: none;
+    color: #adb5bd;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.nav-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 5px;
+}
+
+/* Kolom Kontak & Sosial */
+.about-col p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: #adb5bd;
+    font-size: 1.7rem;
+    margin-right: 18px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #3498db;
+}
+
+/* Bagian Hak Cipta */
+.footer-bottom {
+    text-align: center;
+    padding-top: 25px;
+    margin-top: 35px;
+    border-top: 1px solid #343a40; 
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    color: #868e96;
+}
+
+/* =========================================
+   --- Media Queries (Responsivitas) --- 
+   ========================================= */
+
+/* Mobile Header & Footer (<= 900px) */
+@media (max-width: 900px) {
+    
+    /* Header Mobile */
+    .hamburger-menu {
+        display: block; 
+    }
+
+    .main-nav {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        background-color: #34495e; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+        overflow: hidden;
+    }
+
+    .main-nav.active {
+        display: flex;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 10px 0;
+    }
+
+    .main-nav ul li a {
+        display: block; 
+        padding: 12px 24px;
+        color: #ecf0f1;
+        text-align: left;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08); 
+        border-radius: 0;
+    }
+    
+    .main-nav ul li:last-child a {
+        border-bottom: none;
+    }
+}
+
+/* Small Mobile Footer (<= 600px) */
+@media (max-width: 600px) {
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-col {
+        min-width: 100%;
+        margin-bottom: 30px;
+    }
+}
