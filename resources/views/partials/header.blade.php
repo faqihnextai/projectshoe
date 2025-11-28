@@ -6,7 +6,7 @@
 
             {{-- Tambahkan style="color: #00FFFF" di sini --}}
             <p class="tagline text-sm text-center tracking-widest uppercase neon-blue">
-                Where Kicks Get Reborn
+                Pickup And Delivery Service
             </p>
 
             <a href="#home" class="logo-text text-3xl font-extrabold tracking-widest uppercase neon-pink">

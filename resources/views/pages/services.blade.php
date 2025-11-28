@@ -1,207 +1,169 @@
-<section id="contact" class="bg-gray-900 py-16 px-4">
-    <div class="container mx-auto">
-
-        {{-- Judul Utama (Sama) --}}
-        <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-4 text-white">
-            <span class="text-blue-500">KENALI</span> <span class="text-cyan-400">LAYANAN KAMI</span>
+<section id="contact" class="bg-gray-900 py-16 px-4 md:px-8 lg:px-16">
+    <div class="container mx-auto max-w-7xl">
+        
+        {{-- Judul Utama (Disesuaikan agar teks lebih responsif di Mobile) --}}
+        <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-center mb-2" 
+            style="color: #E94EFF;">
+            LAYANAN KAMI
         </h2>
-        <p class="text-xl text-gray-400 text-center mb-12">
+        <p class="text-base sm:text-lg text-gray-400 text-center mb-16 md:mb-20">
             Kami menawarkan berbagai jenis perawatan spesialistik untuk menjaga koleksi Anda tetap prima.
         </p>
 
-        {{-- ✨ Carousel Layanan (Menggunakan Alpine.js) - 5 SLIDES ✨ --}}
-        <div x-data="{ 
-            slides: ['deep-cleaning', 'premium-treatment', 'unyellowing', 'reglue', 'bag-hat-wash'], 
-            currentSlide: 0, 
-            duration: 10000, 
-            
-            nextSlide() {
-                this.currentSlide = (this.currentSlide + 1) % this.slides.length;
-            },
+        {{-- Kontainer Daftar Layanan (Gap Vertikal Ditingkatkan) --}}
+        <div class="space-y-20 md:space-y-32 lg:space-y-40">
 
-            init() {
-                setInterval(() => {
-                    this.nextSlide();
-                }, this.duration);
-            }
-        }" class="relative max-w-4xl lg:max-w-5xl mx-auto overflow-hidden rounded-xl shadow-2xl"> 
+            {{-- 1. Deep Clean (Gambar Kanan, Teks Kiri) - Neon Pink --}}
+            {{-- Gap horizontal disesuaikan untuk layar kecil dan besar --}}
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center reveal-item opacity-0">
+                
+                {{-- Area Teks (Order 1) --}}
+                <div class="order-2 md:order-1 text-center md:text-right">
+                    {{-- Ukuran Font Disesuaikan --}}
+                    <h3 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 text-pink-500">
+                        DEEP CLEAN
+                    </h3>
+                    {{-- Ukuran Font Disesuaikan --}}
+                    <p class="text-base sm:text-lg lg:text-xl text-gray-300">
+                        Layanan pembersihan menyeluruh untuk sepatu atau tas Anda, dari bagian luar hingga sela-sela yang sulit dijangkau. Membuat barang terlihat kembali segar seperti **BARU**
+                    </p>
+                </div>
 
-            <div class="relative h-auto"> 
-
-                {{-- 1. Card Deep Cleaning (Index 0) --}}
-                <div x-show="currentSlide === 0" 
-                     x-transition:enter="transition ease-out duration-1000"
-                     x-transition:enter-start="opacity-0 translate-x-full" 
-                     x-transition:enter-end="opacity-100 translate-x-0"
-                     x-transition:leave="transition ease-in duration-500 absolute w-full top-0"
-                     x-transition:leave-start="opacity-100 translate-x-0"
-                     x-transition:leave-end="opacity-0 -translate-x-full" 
-                     {{-- PERUBAHAN GAYA: Background gelap dan Padding --}}
-                     class="bg-gray-800 rounded-xl border-t-4 border-pink-600 p-6 md:p-8"> 
-                    
-                    {{-- Judul dan Teks diubah warnanya agar kontras --}}
-                    <h3 class="text-3xl font-bold mb-4 text-center text-blue-400">Deep Cleaning</h3>
-                    
-                    {{-- AREA GAMBAR --}}
-                    <div class="h-64 overflow-hidden mb-6">
-                        <img src="images/service-home1.png" alt="Gambar Deep Cleaning" 
-                             class="w-full h-full object-cover">
+                {{-- Area Gambar (Order 2) --}}
+                {{-- Padding luar dikurangi di Mobile (p-2) untuk menghindari bleberan --}}
+                <div class="order-1 md:order-2 relative p-2 md:p-4">
+                    {{-- Kotak Pembungkus Gambar dengan Efek Sinar --}}
+                    <div class="relative rounded-2xl p-0.5" 
+                         style="background-image: linear-gradient(to bottom right, #EC4899, #F472B6); 
+                                 box-shadow: 0 0 25px 5px #EC4899;">
+                        <div class="w-full h-full overflow-hidden rounded-2xl relative z-10">
+                            {{-- Ganti path gambar sesuai yang benar jika 'service-home1.webp' berbeda --}}
+                            <img src="images/service-home1.webp" alt="Gambar Deep Clean" 
+                                class="w-full h-full object-cover rounded-2xl">
+                        </div>
                     </div>
-
-                    {{-- AREA DESKRIPSI --}}
-                    <div>
-                        <p class="text-base text-gray-300 text-center mb-6">
-                            Perawatan standar yang efektif mengangkat kotoran membandel. Meliputi pembersihan **seluruh bagian sepatu** (atas, tengah, dan sol luar) untuk hasil yang bersih menyeluruh.
-                        </p>
-                        <div class="text-center mt-4">
-                            <p class="text-lg font-medium text-pink-400">
-                                Cocok untuk: <span class="text-blue-500">Sepatu Kasual</span> 
-                            </p>
+                </div>
+            </div>
+            {{-- 2. Premium Treatment (Gambar Kiri, Teks Kanan) - Neon Pink --}}
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center reveal-item opacity-0">
+                
+                {{-- Area Gambar (Order 1) --}}
+                <div class="order-1 relative p-2 md:p-4">
+                    {{-- Kotak Pembungkus Gambar dengan Efek Sinar --}}
+                    <div class="relative rounded-2xl p-0.5" 
+                         style="background-image: linear-gradient(to bottom right, #EC4899, #F472B6); 
+                                 box-shadow: 0 0 25px 5px #EC4899;">
+                        <div class="w-full h-full overflow-hidden rounded-2xl relative z-10">
+                            <img src="images/service-home2.webp" alt="Gambar Premium Treatment" 
+                                class="w-full h-full object-cover rounded-2xl">
                         </div>
                     </div>
                 </div>
 
-                {{-- 2. Card Premium Treatment (Index 1) --}}
-                <div x-show="currentSlide === 1" 
-                     x-transition:enter="transition ease-out duration-1000"
-                     x-transition:enter-start="opacity-0 translate-x-full" 
-                     x-transition:enter-end="opacity-100 translate-x-0"
-                     x-transition:leave="transition ease-in duration-500 absolute w-full top-0"
-                     x-transition:leave-start="opacity-100 translate-x-0"
-                     x-transition:leave-end="opacity-0 -translate-x-full"
-                     {{-- PERUBAHAN GAYA: Background gelap dan Padding --}}
-                     class="bg-gray-800 rounded-xl border-t-4 border-pink-600 p-6 md:p-8">
-                    
-                    {{-- Judul dan Teks diubah warnanya agar kontras --}}
-                    <h3 class="text-3xl font-bold mb-4 text-center text-blue-400">Premium Treatment</h3>
-                    
-                    <div class="h-64 overflow-hidden mb-6">
-                        <img src="images/service-home2.png" alt="Gambar Premium Treatment" 
-                             class="w-full h-full object-cover">
-                    </div>
-
-                    <div>
-                        <p class="text-base text-gray-300 text-center mb-6">
-                            Perawatan ekstra hati-hati menggunakan cairan premium khusus untuk material **sensitif**. Meminimalisir risiko kerusakan tekstur atau perubahan warna pada bahan.
-                        </p>
-                        <div class="text-center mt-4">
-                            <p class="text-lg font-medium text-pink-400">
-                                Cocok untuk: **Kulit, Suede, Nubuck,** dan bahan *luxury*.
-                            </p>
-                        </div>
-                    </div>
+                {{-- Area Teks (Order 2) --}}
+                <div class="order-2 text-center md:text-left">
+                    <h3 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 text-pink-500">
+                        PREMIUM TREATMENT
+                    </h3>
+                    <p class="text-base sm:text-lg lg:text-xl text-gray-300">
+                        Perawatan ekstra khusus menggunakan bahan dan teknik premium untuk material sensitif atau mewah (seperti suede, nubuck, atau kulit khusus). Fokus pada restorasi **TEKSTUR dan KILAU**.
+                    </p>
                 </div>
-
-                {{-- 3. Card Unyellowing (Index 2) --}}
-                <div x-show="currentSlide === 2" 
-                     x-transition:enter="transition ease-out duration-1000"
-                     x-transition:enter-start="opacity-0 translate-x-full" 
-                     x-transition:enter-end="opacity-100 translate-x-0"
-                     x-transition:leave="transition ease-in duration-500 absolute w-full top-0"
-                     x-transition:leave-start="opacity-100 translate-x-0"
-                     x-transition:leave-end="opacity-0 -translate-x-full"
-                     {{-- PERUBAHAN GAYA: Background gelap dan Padding --}}
-                     class="bg-gray-800 rounded-xl border-t-4 border-pink-600 p-6 md:p-8">
-
-                    {{-- Judul dan Teks diubah warnanya agar kontras --}}
-                    <h3 class="text-3xl font-bold mb-4 text-center text-blue-400">Unyellowing</h3>
-
-                    <div class="h-64 overflow-hidden mb-6">
-                        <img src="images/service-home3.png" alt="Gambar Unyellowing" 
-                             class="w-full h-full object-cover">
-                    </div>
-                    
-                    <div>
-                        <p class="text-base text-gray-300 text-center mb-6">
-                            Proses restorasi untuk mengembalikan warna putih asli pada bagian **sol karet** (midsole/outsole) yang sudah menguning (*oxidized*) akibat usia, udara, dan penyimpanan.
-                        </p>
-                        <div class="text-center mt-4">
-                            <p class="text-lg font-medium text-pink-400">
-                                Cocok untuk: Sol karet atau *rubber* berwarna putih.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                {{-- 4. Card Reglue (Index 3) --}}
-                <div x-show="currentSlide === 3" 
-                     x-transition:enter="transition ease-out duration-1000"
-                     x-transition:enter-start="opacity-0 translate-x-full" 
-                     x-transition:enter-end="opacity-100 translate-x-0"
-                     x-transition:leave="transition ease-in duration-500 absolute w-full top-0"
-                     x-transition:leave-start="opacity-100 translate-x-0"
-                     x-transition:leave-end="opacity-0 -translate-x-full"
-                     {{-- PERUBAHAN GAYA: Background gelap dan Padding --}}
-                     class="bg-gray-800 rounded-xl border-t-4 border-pink-600 p-6 md:p-8">
-
-                    {{-- Judul dan Teks diubah warnanya agar kontras --}}
-                    <h3 class="text-3xl font-bold mb-4 text-center text-blue-400">Reglue (Perbaikan Lem)</h3>
-
-                    <div class="h-64 overflow-hidden mb-6">
-                        <img src="images/service-home4.png" alt="Gambar Reglue Sepatu" 
-                             class="w-full h-full object-cover">
-                    </div>
-                    
-                    <div>
-                        <p class="text-base text-gray-300 text-center mb-6">
-                            Perbaikan pada bagian **sol sepatu yang terlepas** (separasi). Kami menggunakan lem khusus yang kuat dan presisi untuk menyatukan kembali sol dengan *upper* sepatu.
-                        </p>
-                        <div class="text-center mt-4">
-                            <p class="text-lg font-medium text-pink-400">
-                                Cocok untuk: Perbaikan sol yang mulai menganga.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                {{-- 5. Card Bag & Hat Wash (Index 4) --}}
-                <div x-show="currentSlide === 4" 
-                     x-transition:enter="transition ease-out duration-1000"
-                     x-transition:enter-start="opacity-0 translate-x-full" 
-                     x-transition:enter-end="opacity-100 translate-x-0"
-                     x-transition:leave="transition ease-in duration-500 absolute w-full top-0"
-                     x-transition:leave-start="opacity-100 translate-x-0"
-                     x-transition:leave-end="opacity-0 -translate-x-full"
-                     {{-- PERUBAHAN GAYA: Background gelap dan Padding --}}
-                     class="bg-gray-800 rounded-xl border-t-4 border-pink-600 p-6 md:p-8">
-
-                    {{-- Judul dan Teks diubah warnanya agar kontras --}}
-                    <h3 class="text-3xl font-bold mb-4 text-center text-blue-400">Pencucian Tas & Topi</h3>
-
-                    <div class="h-64 overflow-hidden mb-6">
-                        <img src="images/service-home5.png" alt="Gambar Cuci Tas dan Topi" 
-                             class="w-full h-full object-cover">
-                    </div>
-                    
-                    <div>
-                        <p class="text-base text-gray-300 text-center mb-6">
-                            Layanan kebersihan dan perawatan khusus untuk aksesoris favorit Anda, mulai dari tas kanvas, tas kulit, hingga topi. Melindungi bentuk dan warna.
-                        </p>
-                        <div class="text-center mt-4">
-                            <p class="text-lg font-medium text-pink-400">
-                                Cocok untuk: Semua jenis tas dan topi.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
             </div>
 
-            {{-- Indikator Slide (Sama) --}}
-            <div class="flex justify-center space-x-2 mt-4 absolute bottom-4 left-0 right-0">
-                <template x-for="(slide, index) in slides" :key="index">
-                    <button @click="currentSlide = index"
-                            :class="{'bg-pink-600': currentSlide === index, 'bg-gray-400': currentReview !== index}"
-                            class="w-3 h-3 rounded-full transition-colors duration-300"></button>
-                </template>
+            ---
+
+            {{-- 3. Unyellowing (Gambar Kanan, Teks Kiri) - Neon Cyan --}}
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center reveal-item opacity-0">
+                
+                {{-- Area Teks (Order 1) --}}
+                <div class="order-2 md:order-1 text-center md:text-right">
+                    <h3 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 text-cyan-400">
+                        UNYELLOWING
+                    </h3>
+                    <p class="text-base sm:text-lg lg:text-xl text-gray-300">
+                        Proses spesialis untuk menghilangkan noda kekuningan pada sol, midsole, atau material putih lainnya yang diakibatkan oksidasi. Mengembalikan warna putih **CERAH DAN MENGKILAU**.
+                    </p>
+                </div>
+
+                {{-- Area Gambar (Order 2) --}}
+                <div class="order-1 md:order-2 relative p-2 md:p-4">
+                    {{-- Kotak Pembungkus Gambar dengan Efek Sinar --}}
+                    <div class="relative rounded-2xl p-0.5" 
+                         style="background-image: linear-gradient(to bottom right, #22D3EE, #67E8F9); 
+                                 box-shadow: 0 0 25px 5px #22D3EE;">
+                        <div class="w-full h-full overflow-hidden rounded-2xl relative z-10">
+                            <img src="images/service-home3.webp" alt="Gambar Unyellowing" 
+                                class="w-full h-full object-cover rounded-2xl">
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            ---
             
+            {{-- 4. Reglue (Gambar Kiri, Teks Kanan) - Neon Cyan --}}
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center reveal-item opacity-0">
+                
+                {{-- Area Gambar (Order 1) --}}
+                <div class="order-1 relative p-2 md:p-4">
+                    {{-- Kotak Pembungkus Gambar dengan Efek Sinar --}}
+                    <div class="relative rounded-2xl p-0.5" 
+                         style="background-image: linear-gradient(to bottom right, #22D3EE, #67E8F9); 
+                                 box-shadow: 0 0 25px 5px #22D3EE;">
+                        <div class="w-full h-full overflow-hidden rounded-2xl relative z-10">
+                            {{-- Anda mungkin perlu memastikan gambar Reglue berbeda --}}
+                            <img src="images/service-home3.webp" alt="Gambar Reglue" 
+                                class="w-full h-full object-cover rounded-2xl"> 
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Area Teks (Order 2) --}}
+                <div class="order-2 text-center md:text-left">
+                    <h3 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 text-cyan-400">
+                        REGLUE
+                    </h3>
+                    <p class="text-base sm:text-lg lg:text-xl text-gray-300">
+                        Perbaikan profesional untuk merekatkan kembali bagian sol sepatu, pinggiran, atau panel yang mulai terlepas menggunakan lem khusus dan teknik penekanan yang tepat agar daya tahannya kembali **OPTIMAL**.
+                    </p>
+                </div>
+            </div>
+
+            ---
+
+            {{-- 5. Bag & Cap (Gambar Kiri, Teks Kanan) - Neon Biru/Indigo --}}
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center reveal-item opacity-0">
+                
+                {{-- Area Gambar (Order 1) --}}
+                <div class="order-1 relative p-2 md:p-4">
+                    {{-- Kotak Pembungkus Gambar dengan Efek Sinar --}}
+                    <div class="relative rounded-2xl p-0.5" 
+                         style="background-image: linear-gradient(to bottom right, #6366F1, #818CF8); 
+                                 box-shadow: 0 0 25px 5px #6366F1;">
+                        <div class="w-full h-full overflow-hidden rounded-2xl relative z-10">
+                            <img src="images/service-home5.webp" alt="Gambar Bag & Cap" 
+                                class="w-full h-full object-cover rounded-2xl">
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Area Teks (Order 2) --}}
+                <div class="order-2 text-center md:text-left">
+                    <h3 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 text-indigo-500">
+                        BAG & CAP
+                    </h3>
+                    <p class="text-base sm:text-lg lg:text-xl text-gray-300">
+                        Perawatan khusus yang disesuaikan untuk material tas dan topi. Meliputi pembersihan, conditioning (pelembaban), dan perlindungan agar lebih **AWET dan TERAWAT**.
+                    </p>
+                </div>
+            </div>
+
         </div>
-        {{-- Akhir Carousel Layanan --}}
+        {{-- Akhir Daftar Layanan --}}
 
 
-        <div class="mt-12 text-center">
+        <div class="mt-20 text-center">
             <a href="#"
                 class="px-8 py-3 bg-yellow-500 hover:bg-yellow-600 text-black font-bold rounded-xl transition shadow-lg">
                 Lihat Daftar Harga Lengkap!

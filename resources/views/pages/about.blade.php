@@ -45,9 +45,9 @@
                                 <span class="text-yellow-400 mr-2 text-2xl">★★★★★</span> Sofian Yusuf
                             </h4>
                             <div class="grid grid-cols-2 grid-rows-2 gap-2 h-96">
-                                <img src="/images/yusuf1.jpg" alt="Foto Ulasan 1" class="w-full h-full object-cover rounded-lg row-span-2">
-                                <img src="/images/yusuf2.jpeg" alt="Foto Ulasan 2" class="w-full h-full object-cover rounded-lg">
-                                <img src="/images/yusuf3.jpeg" alt="Foto Ulasan 3" class="w-full h-full object-cover rounded-lg">
+                                <img src="/images/yusuf1.webp" alt="Foto Ulasan 1" class="w-full h-full object-cover rounded-lg row-span-2">
+                                <img src="/images/yusuf2.webp" alt="Foto Ulasan 2" class="w-full h-full object-cover rounded-lg">
+                                <img src="/images/yusuf3.webp" alt="Foto Ulasan 3" class="w-full h-full object-cover rounded-lg">
                             </div>
                         </div>
 
@@ -79,8 +79,8 @@
                              </h4>
                             <div class="grid grid-cols-2 gap-2 h-48 md:h-64"> 
                                 {{-- Menggunakan grid 2 kolom, tinggi disesuaikan --}}
-                                <img src="/images/elis1.jpeg" alt="Foto Ulasan 1" class="w-full h-full object-cover rounded-lg">
-                                <img src="/images/elis2.jpeg" alt="Foto Ulasan 2" class="w-full h-full object-cover rounded-lg">
+                                <img src="/images/elis1.webp" alt="Foto Ulasan 1" class="w-full h-full object-cover rounded-lg">
+                                <img src="/images/elis2.webp" alt="Foto Ulasan 2" class="w-full h-full object-cover rounded-lg">
                             </div>
                         </div>
 
@@ -112,7 +112,7 @@
                             </h4>
                             <div class="flex justify-center items-center h-48 md:h-64"> 
                                 {{-- Menggunakan flexbox untuk memusatkan satu gambar, tinggi disesuaikan --}}
-                                <img src="/images/faqih1.jpeg" alt="Foto Ulasan 1" class="max-w-full max-h-full object-contain rounded-lg">
+                                <img src="/images/faqih1.webp" alt="Foto Ulasan 1" class="max-w-full max-h-full object-contain rounded-lg">
                             </div>
                         </div>
 

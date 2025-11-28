@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'SHOENIX')</title>
-    <link rel="icon" type="image/jpg" href="{{ asset('logo.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('logo.png') }}">
 
     {{-- BARIS KRUSIAL UNTUK MEMUAT CSS/JS --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -17,6 +17,9 @@
 </head>
 
 <body>
+    {{-- BARIS BARU INI UNTUK MEMANGGIL LOADING SCREEN --}}
+    @include('partials.loadingscreen')
+
     {{-- 1. HEADER (Partial View) --}}
     @include('partials.header')
 

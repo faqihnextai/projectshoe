@@ -19,6 +19,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // PENTING: Untuk mengatasi masalah Mixed Content saat menggunakan HTTPS/Proxy (seperti ngrok).
+        // Baris ini akan memastikan semua aset (asset(), @vite, url()) akan menggunakan skema HTTPS.
+        if (config('app.env') !== 'local') { 
+            URL::forceScheme('https');
+        }
     }
 }

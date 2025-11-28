@@ -29,17 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-        let slider = document.getElementById('slider');
-        let index = 0;
-
-        function nextSlide() {
-            index = (index + 1) % 3; // 3 gambar
-            slider.style.transform = `translateX(-${index * 100}%)`;
-        }
-
-        setInterval(nextSlide, 4000);
-    });
 
     document.addEventListener('DOMContentLoaded', function () {
         const carousel = document.getElementById('review-carousel');
@@ -132,3 +121,37 @@ function handleScroll() {
 
 // Tambahkan event listener saat terjadi scroll
 window.addEventListener('scroll', handleScroll);
+
+// =========================================================
+    // ✨ FUNGSI REVEAL ON SCROLL (SLIDE IN) ✨
+    // =========================================================
+
+    const revealElements = document.querySelectorAll('.reveal-item');
+    
+    // Opsi untuk Observer (menentukan kapan item dianggap 'terlihat')
+    const observerOptions = {
+        root: null, // Mengamati viewport
+        rootMargin: '0px',
+        threshold: 0.2 // Item harus terlihat 20% sebelum animasi dimulai
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Saat elemen terlihat di viewport
+                const element = entry.target;
+                
+                // Tambahkan kelas animasi yang membuat elemen muncul (opacity 1)
+                // dan mengatur posisi akhir (translate-x-0)
+                element.classList.add('is-visible'); 
+                
+                // Hentikan pengamatan setelah animasi berjalan (agar hanya sekali)
+                observer.unobserve(element);
+            }
+        });
+    }, observerOptions);
+
+    // Mulai mengamati setiap elemen reveal-item
+    revealElements.forEach(item => {
+        observer.observe(item);
+    });
